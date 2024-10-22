@@ -1,12 +1,12 @@
-import { APIGatewayProxyHandlerV2 } from "aws-lambda";  // CHANGED
+import { APIGatewayProxyHandlerV2 } from "aws-lambda";  //CHANGED
 import { DynamoDBClient } from "@aws-sdk/client-dynamodb";
 import { DynamoDBDocumentClient, ScanCommand } from "@aws-sdk/lib-dynamodb";
 
 const ddbDocClient = new DynamoDBClient({ region: process.env.REGION });
 
-export const handler: APIGatewayProxyHandlerV2 = async (event, context) => { // CHANGED
+export const handler: APIGatewayProxyHandlerV2 = async (event, context) => { //CHANGED
   try {
-    // Print Event
+    //Print Event
     console.log("Event: ", event);
 
     const commandOutput = await ddbDocClient.send(
@@ -27,7 +27,7 @@ export const handler: APIGatewayProxyHandlerV2 = async (event, context) => { // 
       data: commandOutput.Items,
     };
 
-    // Return Response
+    //Return Response
     return {
       statusCode: 200,
       headers: {

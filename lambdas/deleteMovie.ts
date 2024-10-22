@@ -6,7 +6,7 @@ const ddbDocClient = createDDbDocClient();
 
 export const handler: APIGatewayProxyHandlerV2 = async (event, context) => {
   try {
-    // Log the incoming event
+    //Log the incoming event
     console.log("[EVENT]", JSON.stringify(event));
 
     // Extract movieId from the path parameters
